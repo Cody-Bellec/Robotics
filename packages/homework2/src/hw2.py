@@ -6,11 +6,10 @@ from std_msgs.msg import Float32
 
 class Talker:
     def __init__(self):
-        self.pub = rospy.Publisher('total', Float32, queue_size=10)
+        self.pub = rospy.Publisher('delta', Float32, queue_size=10)
     
     def talk(self):
         hello_str = rospy.get_time()
-        rospy.loginfo(hello_str)
         self.pub.publish(hello_str)
     
 if __name__ == '__main__':
