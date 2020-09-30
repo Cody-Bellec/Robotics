@@ -1,7 +1,7 @@
 <launch>
 
 	<include file="$(find homework1)/launch/homework1.launch"/>
-	<include file="$(find homework2)/launch/launchfile.launch"/>
+	<include file="$(find homework2)/launch/homework2.launch"/>
   		<group ns="homework3">
   			<node pkg="homework3" name="homework3" type="homework3.py">
             			<remap from="/homework2/subscriber" to="/homework3/homework3"/>
