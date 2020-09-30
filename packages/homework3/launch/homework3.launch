@@ -4,7 +4,7 @@
 	<include file="$(find homework2)/launch/launchfile.launch"/>
   		<group ns="homework3">
   			<node pkg="homework3" name="homework3" type="homework3.py">
-            			<remap from="/homework2/listener" to="/homework3/homework3"/>
+            			<remap from="/homework2/subscriber" to="/homework3/homework3"/>
         		</node>
   		</group>
 </launch>
