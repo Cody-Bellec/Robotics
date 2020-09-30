@@ -15,7 +15,7 @@ class Talker:
 if __name__ == '__main__':
     try:
         t = Talker()
-        rospy.init_node('/homework2/talker', anonymous=True)
+        rospy.init_node('talker', anonymous=True)
         rate = rospy.Rate(1) # 1hz
         while not rospy.is_shutdown():
             t.talk()
