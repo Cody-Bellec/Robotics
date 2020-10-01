@@ -22,7 +22,7 @@ class Homework3:
 if rospy.has_param(mode):
 	self.mode = rospy.get_param(mode)
 else:
-    	self.mode = “default”
+    	self.mode = default
 	
 if __name__ == '__main__':
 	rospy.init_node('homework3')
