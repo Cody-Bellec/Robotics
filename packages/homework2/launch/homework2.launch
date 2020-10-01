@@ -3,8 +3,9 @@
   <group ns="homework2">
 
     <node pkg="homework2" name="talker" type="hw2.py"/>
-    <node pkg="homework2" name="listener" type="hw2_1.py"/>
-    <remap from="/homework3/homework3" to="/homework2/listener"/>
+    <node pkg="homework2" name="listener" type="hw2_1.py">
+      <remap from="/homework3/homework3" to="/homework2/listener"/>
+    </node>
   </group>
 
 </launch>
