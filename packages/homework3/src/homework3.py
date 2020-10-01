@@ -19,7 +19,7 @@ class Homework3:
 		print("The distance in meters is %i meters." % d_mtrs)
 		print("The distance in feet is %.2f feet." % d_ft)
 		print("The distance in smoots is %.2f smoots." % d_smoot)
-if rospy.has_param(“mode”):
+if rospy.has_param(mode):
 	self.mode = rospy.get_param(mode)
 else:
     	self.mode = “default”
