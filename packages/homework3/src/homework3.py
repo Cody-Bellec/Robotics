@@ -7,25 +7,24 @@ class Homework3:
 	def __init__(self):
 		rospy.Subscriber("/homework1/total", Float32, self.callback)
 		self.pub = rospy.Publisher("/homework3/converted_total", Float32, queue_size=10)
-		self.total = 0
 
-	def callback(self, data):
-		self.total += data.data
-		self.pub.publish(self.total)
-		d_mtrs = int(input("Input distance in meters:"))
-		d_mtrs = d_mtrs
-		d_ft = d_mtrs * 3.2808
-		d_smoot = d_mtrs * 1.7018
-		print("The distance in meters is %i meters." % d_mtrs)
-		print("The distance in feet is %.2f feet." % d_ft)
-		print("The distance in smoots is %.2f smoots." % d_smoot)
-if rospy.has_param(mode):
-	self.mode = rospy.get_param("mode")
-else:
-    	self.mode = "default"
-	
+	def callback(self, unit):
+		if rospy.has_param("/value"):
+			self.mode = rospy.get_param("/value")
+		else:
+    			self.mode = "meters"
+    		if self.mode == "smoots":
+    			turnout = data.data * 1.7018
+    		elif self.mode == "feet":
+    			turnout = data.data
+    		else:
+    			turnout = data.data * 3.2808
+		
+		self.pub.publish(turnout)
+		rospy.loginfo("input data: %lf feet. output data: %lf %s", data.data, turnout, self.mode)
+		
 if __name__ == '__main__':
-	rospy.init_node('homework3')
+	rospy.init_node('homework3', anonymous=True)
 	Homework3()
 
     # spin() simply keeps python from exiting until this node is stopped
