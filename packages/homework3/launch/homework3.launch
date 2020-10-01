@@ -8,6 +8,6 @@
 
     			<node pkg="homework2" name="talker" type="hw2.py"/>
     			<node pkg="homework2" name="listener" type="hw2_1.py"/>
-			<remap from=" /homework1/total " to="/homework3/converted_total"/>
+			<remap from="/homework1/total" to="/homework3/converted_total"/>
   		</group>
 </launch>
