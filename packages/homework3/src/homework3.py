@@ -7,7 +7,7 @@ class Homework3:
     def __init__(self):
         rospy.Subscriber("/homework1/total", Float32, self.callback)
         self.pub = rospy.Publisher("/homework3/converted_total", Float32, queue_size=10)
-    def callback(self, unit):
+    def callback(self, data):
 		
         if rospy.has_param("/value"):
             self.mode = rospy.get_param("/value")
