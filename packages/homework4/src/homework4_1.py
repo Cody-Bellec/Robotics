@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 import rospy
-from hw4_pt1.msg import HW1
+from homework4.msg import hw4_pt1
 
 class Homework4:
     def __init__(self):
-        rospy.Subscriber("/homework1/total", HW1, self.callback)
-        self.pub = rospy.Publisher("/homework3/converted_total", HW1, queue_size=10)
+        rospy.Subscriber("/homework1/total", hw4_pt1, self.callback)
+        self.pub = rospy.Publisher("/homework3/converted_total", hw4_pt1, queue_size=10)
     def callback(self, data):
 		
         if rospy.has_param("unit_holder"):
@@ -23,6 +23,10 @@ class Homework4:
 		
             self.pub.publish(turnout)
             rospy.loginfo("input data: %lf feet. output data: %lf %s", data.data, turnout, self.mode)
+        
+        a_hw4_pt1_message = hw4_pt1()
+        a_hw4_pt1_message.unit_holder = "A wonderful number!"
+        a_hw4_pt1_message.HW1 = 14
 		
 		
 if __name__ == '__main__':
