@@ -1,0 +1,13 @@
+<launch>
+
+	<include file="$(find homework1)/launch/homework1.launch"/>
+  		<group ns="homework4">
+  			<node pkg="homework4" name="homework4_pt1" type="homework4_1.py"/>	
+  		</group>
+  		<group ns="homework2">
+
+    			<node pkg="homework2" name="talker" type="hw2.py"/>
+    			<node pkg="homework2" name="listener" type="hw2_1.py">
+			</node>
+  		</group>
+</launch>
