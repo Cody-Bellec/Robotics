@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import rospy
-from MSG1.msg import hw4_pt1
+from hw4_pt1.msg import HW1
 
 class Homework4:
     def __init__(self):
@@ -13,9 +13,17 @@ class Homework4:
             self.mode = rospy.get_param("unit_holder")
         else:
             self.mode = 'meters'
+    			
+        if self.mode == 'smoots':
+            turnout = data.data * 1.7018
+        elif self.mode == 'feet':
+            turnout = data.data
+        else:
+            turnout = data.data * 3.2808
 		
             self.pub.publish(turnout)
             rospy.loginfo("input data: %lf feet. output data: %lf %s", data.data, turnout, self.mode)
+		
 		
 if __name__ == '__main__':
 	rospy.init_node('homework4_1', anonymous=True)
