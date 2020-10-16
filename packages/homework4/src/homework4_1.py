@@ -7,6 +7,7 @@ class Homework4:
     def __init__(self):
         rospy.Subscriber("/homework1/total", hw4_pt1, self.callback)
         self.pub = rospy.Publisher("/homework3/converted_total", hw4_pt1, queue_size=10)
+        self.unit_holder
     def callback(self, data):
 		
         if rospy.has_param("unit_holder"):
