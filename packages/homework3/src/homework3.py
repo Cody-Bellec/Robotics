@@ -9,12 +9,12 @@ class Homework3:
         self.pub = rospy.Publisher("/homework3/converted_total", Float32, queue_size=10)
     def callback(self, data):
         		
-        if rospy.has_param("/value"):
-            self.mode = rospy.get_param("/value")
+        if rospy.has_param("value"):
+            self.value = rospy.get_param("value")
         else:
-            self.mode = 'meters'
+            self.value = 'meters'
     			
-        if self.mode == 'smoots':
+        if self.value == 'smoots':
             turnout = data.data * 1.7018
         elif self.mode == 'feet':
             turnout = data.data
@@ -23,8 +23,8 @@ class Homework3:
 		
             self.pub.publish(turnout)
             rospy.loginfo("input data: %lf feet. output data: %lf %s", data.data, turnout, self.mode)
-        if rospy.has_param("/value"):
-            rospy.has_param("/value", self.mode)
+        if rospy.has_param("value"):
+            rospy.has_param("value", self.value)
         else:
             rospy.logwarn("No parameter mode found!")
 		
