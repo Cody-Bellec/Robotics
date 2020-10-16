@@ -16,7 +16,7 @@ class Homework3:
     			
         if self.value == 'smoots':
             turnout = data.data * 1.7018
-        elif self.mode == 'feet':
+        elif self.value == 'feet':
             turnout = data.data
         else:
             turnout = data.data * 3.2808
