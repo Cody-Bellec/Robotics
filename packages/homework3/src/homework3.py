@@ -22,7 +22,7 @@ class Homework3:
             turnout = data.data * 3.2808
 		
             self.pub.publish(turnout)
-            rospy.loginfo("input data: %lf feet. output data: %lf %s", data.data, turnout, self.mode)
+            rospy.loginfo("input data: %lf feet. output data: %lf %s", data.data, turnout, self.value)
         if rospy.has_param("value"):
             rospy.has_param("value", self.value)
         else:
