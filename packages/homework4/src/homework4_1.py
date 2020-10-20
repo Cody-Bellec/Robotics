@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import rospy
-from homework4_1msgs.msg import hw4_pt1
+from homework4.msg import hw4_pt1
 
 class Homework4:
     def __init__(self):
