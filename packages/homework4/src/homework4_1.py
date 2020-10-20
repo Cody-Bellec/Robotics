@@ -8,7 +8,8 @@ class Homework4:
     def __init__(self):
         rospy.Subscriber("/homework1/total", Float32, self.callback)
         self.pub = rospy.Publisher("hw4_pt1_msg", hw4_pt1, queue_size=10)
-        self.unit_holder
+        turnout = 0 
+        data.data = 0
     def callback(self, data):
 		
         if rospy.has_param("unit_holder"):
