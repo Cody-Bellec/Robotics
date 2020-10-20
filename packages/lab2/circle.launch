@@ -1,5 +1,5 @@
 <launch> 
-    <group ns="$(env canard)">
+    <group ns="$(env VEHICLE_NAME)">
         <node pkg="lab2" name="Circle" type="Circle.py"/>
     </group> 
 </launch>
