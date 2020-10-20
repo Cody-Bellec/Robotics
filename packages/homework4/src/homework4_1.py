@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 
 import rospy
+from std_msgs.msg import Float32
 from homework4.msg import hw4_pt1
 
 class Homework4:
     def __init__(self):
         rospy.Subscriber("/homework1/total", Float32, self.callback)
-        self.pub = rospy.Publisher("/homework3/converted_total", Float32, queue_size=10)
+        self.pub = rospy.Publisher("hw4_pt1_msg", hw4_pt1, queue_size=10)
         self.unit_holder
     def callback(self, data):
 		
@@ -21,15 +22,14 @@ class Homework4:
             turnout = data.data
         else:
             turnout = data.data * 3.2808
-		
-            self.pub.publish(turnout)
-            rospy.loginfo("input data: %lf feet. output data: %lf %s", data.data, turnout, self.mode)
-        
-        a_hw4_pt1_message = hw4_pt1()
-        a_hw4_pt1_message.unit_holder = "A wonderful number!"
-        a_hw4_pt1_message.c = 14
-		
-		
+
+        message = hw4_pt1()
+        message.unit_holder = self.mode
+        message.c = turnout
+        		
+        self.pub.publish(msg)
+        rospy.loginfo(msg)
+       	
 if __name__ == '__main__':
 	rospy.init_node('homework4_1', anonymous=True)
 	Homework4()
