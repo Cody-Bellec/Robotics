@@ -5,8 +5,8 @@ from homework4_1msgs.msg import hw4_pt1
 
 class Homework4:
     def __init__(self):
-        rospy.Subscriber("/homework1/total", hw4_pt1, self.callback)
-        self.pub = rospy.Publisher("/homework3/converted_total", hw4_pt1, queue_size=10)
+        rospy.Subscriber("/homework1/total", Float32, self.callback)
+        self.pub = rospy.Publisher("/homework3/converted_total", Float32, queue_size=10)
         self.unit_holder
     def callback(self, data):
 		
@@ -27,7 +27,7 @@ class Homework4:
         
         a_hw4_pt1_message = hw4_pt1()
         a_hw4_pt1_message.unit_holder = "A wonderful number!"
-        a_hw4_pt1_message.HW1 = 14
+        a_hw4_pt1_message.c = 14
 		
 		
 if __name__ == '__main__':
