@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   duckietown_msgs
   roscpp
   rospy
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -107,7 +108,7 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES lab2
-CATKIN_DEPENDS _msgs duckietown_msgs roscpp rospy std
+CATKIN_DEPENDS std_msgs duckietown_msgs roscpp rospy message_runtime
 #  DEPENDS system_lib
 )
 
