@@ -6,7 +6,7 @@ from duckietown_msgs.msg import Twist2DStamped
 
 class Circle:
     def __init__(self):
-        self.pub = rospy.Publisher("/canard/car_cmd_switch_node/cmd", Twist2DStamped, queue_size=10)
+        self.pub = rospy.Publisher("/car_cmd_switch_node/cmd", Twist2DStamped, queue_size=10)
 
     def callback(self, speed, turn_ratio):
         
