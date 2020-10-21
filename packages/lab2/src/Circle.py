@@ -20,10 +20,10 @@ if __name__ == '__main__':
     try:
         c = Circle()
         rospy.init_node('circle', anonymous=True)
-        c.callback(0.35, 6)
-        c.callback(0.35, 6)
-        c.callback(0.35, 6)
-        c.callback(0.35, 6)
+        c.callback(0.4, 6.0)
+        c.callback(0.4, 6.0)
+        c.callback(0.4, 6.0)
+        c.callback(0.4, 6.0)
         rospy.sleep(7)
         c.callback(0, 0)
         
