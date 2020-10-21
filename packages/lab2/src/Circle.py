@@ -8,11 +8,11 @@ class Circle:
     def __init__(self):
         self.pub = rospy.Publisher("/canard/car_cmd_switch_node/cmd", Twist2DStamped, queue_size=10)
 
-    def callback(self, velocity, turnrate):
+    def callback(self, speed, turn_ratio)
         
-        turnout = Twist2DStamped()
-        self.turnout.v = velocity
-        self.turnout.omega = turnrate
+        self.turnout = Twist2DStamped
+        self.turnout.s = speed
+        self.turnout.omega = turn_ratio
           
         self.pub.publish(self.turnout)
 
