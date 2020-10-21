@@ -8,10 +8,10 @@ project(lab2)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  std_msgs
   duckietown_msgs
   roscpp
   rospy
+  std_msgs
   message_generation
 )
 
@@ -74,6 +74,7 @@ generate_messages(
   DEPENDENCIES
   duckietown_msgs
   std_msgs
+  lab2
 )
 
 ################################################
@@ -108,7 +109,7 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES lab2
-CATKIN_DEPENDS std_msgs duckietown_msgs roscpp rospy message_runtime
+CATKIN_DEPENDS duckietown_msgs roscpp rospy std_msgs message_runtime
 #  DEPENDS system_lib
 )
 
