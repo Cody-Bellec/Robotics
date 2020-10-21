@@ -11,7 +11,7 @@ class Circle:
     def callback(self, speed, turn_ratio):
         
         self.turnout = Twist2DStamped()
-        self.turnout.s = speed
+        self.turnout.v = speed
         self.turnout.omega = turn_ratio
           
         self.pub.publish(self.turnout)
