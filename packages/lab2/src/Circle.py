@@ -9,8 +9,6 @@ class Circle:
         self.pub = rospy.Publisher("car_cmd_switch_node/cmd", Twist2DStamped, queue_size=10)
 
     def callback(self, velocity, turnrate):
-        velocity = 1.00
-        turnrate = 4.5
         
         turnout = Twist2DStamped()
         self.turnout.v = velocity
@@ -23,13 +21,11 @@ if __name__ == '__main__':
         c = Circle()
         rospy.init_node('circle', anonymous=True)
         c.callback(1.00, 4.5)
-        drive = c.callback * 4
+        c.callback(1.00, 4.5)
+        c.callback(1.00, 4.5)
+        c.callback(1.00, 4.5)
+        rospy.sleep(7)
         c.callback(0, 0)
         
-        
-       #rate = rospy.Rate(1) # 1hz
-       #while not rospy.is_shutdown():
-           #c.callback()
-           #rate.sleep()
     except rospy.ROSInterruptException:
         pass
