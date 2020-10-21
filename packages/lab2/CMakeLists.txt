@@ -69,10 +69,11 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   _msgs#   duckietown_msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  duckietown_msgs
+  std_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -106,7 +107,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES lab2
-#  CATKIN_DEPENDS _msgs duckietown_msgs roscpp rospy std
+CATKIN_DEPENDS _msgs duckietown_msgs roscpp rospy std
 #  DEPENDS system_lib
 )
 
