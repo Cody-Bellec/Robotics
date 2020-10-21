@@ -19,7 +19,11 @@ class Homework3:
         self.pub.publish(turnout)
 
 if __name__ == '__main__':
-    rospy.init_node('homework3', anonymous=True)
-    Homework3()
-    # spin() simply keeps python from exiting until this node is stopped
-    rospy.spin()
+    t = Talker()
+        rospy.init_node('talker', anonymous=True)
+        rate = rospy.Rate(1) # 1hz
+        while not rospy.is_shutdown():
+            t.talk()
+            rate.sleep()
+    except rospy.ROSInterruptException:
+        pass
