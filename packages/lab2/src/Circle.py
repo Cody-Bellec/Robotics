@@ -20,8 +20,8 @@ if __name__ == '__main__':
     try:
         c = Circle()
         rospy.init_node('circle', anonymous=True)
-        c.moving(0.4, 6.0)
-        rospy.sleep(15)
+        c.moving(0.4, 3.8)
+        rospy.sleep(10)
         c.moving(0, 0)
         
     except rospy.ROSInterruptException:
