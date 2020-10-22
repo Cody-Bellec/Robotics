@@ -21,9 +21,6 @@ if __name__ == '__main__':
         c = Circle()
         rospy.init_node('circle', anonymous=True)
         c.moving(0.4, 6.0)
-        c.moving(0.4, 6.0)
-        c.moving(0.4, 6.0)
-        c.moving(0.4, 6.0)
         rospy.sleep(15)
         c.moving(0, 0)
         
