@@ -4,12 +4,16 @@ import time
 from std_msgs.msg import Float32
 
 class PID:
-    def __init__(self, firstError):
+    def __init__(self, firstError, firstvelocity):
+        self.velocity = firstvelocity
         self.KP = 0.15
         self.KI = 0.01
         self.KD = 0.4
+        
+        global t1
         t1 = t.time()
-        self.laterError = firstError
+        global laterError
+        lastError = firstError
         
     def changeGainz(self, KPc, KIc, KDc):
         self.KP = KPc
@@ -17,10 +21,10 @@ class PID:
         self.KD = KDc
     
     def calc(self, error):
-        alphaT = t.time()-T1
+        alphaT = t.time()-t1
         
-        self.signal = (self.KP*error) + (self.KI * alphaT) + (self.KD *((error-self.laterError)/alphaT))
-        self.laterError = error
+        self.signal = (self.KP*error) + (self.KI * alphaT) + (self.KD *((error-lastError)/alphaT))
+        self.lastError = error
         
         return self.signal
     
