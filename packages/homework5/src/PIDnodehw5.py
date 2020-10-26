@@ -2,7 +2,7 @@
 
 import rospy
 from std_msgs.msg import Float32
-from homework5 import PIDclasshw5
+from PIDclass import PID
 
 class hw5_node:
     def __init__(self):
