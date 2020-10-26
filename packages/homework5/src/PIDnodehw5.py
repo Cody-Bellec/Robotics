@@ -2,7 +2,7 @@
 
 import rospy
 from std_msgs.msg import Float32
-from PIDclass import PID
+from homework5 import PIDclasshw5
 
 class hw5_node:
     def __init__(self):
@@ -24,8 +24,8 @@ class hw5_node:
         self.pub.publish(self.signal)
 
 if __name__ == '__main__':
-    rospy.init_node('homework5', anonymous=True)
-    Homework5()
+    rospy.init_node('hw5_node', anonymous=True)
+    hw5_node()
 
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()
