@@ -10,11 +10,11 @@ class hw5_node:
         remote = PID(30,20)
         remote.changeGainz(0.42,0,1.58)
         
-        if rospy.has_param("/remote_ready"):
-            rospy.set_param("/remote_ready", 'True')
-            
-        rospy.Subscriber("/remote_hw/error", Float32, self.recall)
-        self.pub = rospy.Publisher('/remote_hw/control_input', Float32, queue_size = 10)
+        if rospy.has_param("/controller_ready"):
+            rospy.set_param("/controller_ready", 'true')       
+    
+        rospy.Subscriber("/controls_hw/error", Float32, self.callback)
+        self.pub = rospy.Publisher('/controls_hw/control_input', Float32, queue_size=10)
         
     def recall(self, value):
         self.signal = remote.calculate(value.data)

@@ -1,9 +1,9 @@
 <launch>
 
-<param name="remote_ready" type="string" value="true" />
+<param name="controller_ready" type="string" value="true" />
 
   <group ns="homework5">
-    <param name="remote_ready" type="string" value="true" />
+    <param name="controller_ready" type="string" value="true" />
     <node pkg="homework5" name="PIDnodehw5" type="PIDnodehw5.py"/>
   </group>
   
