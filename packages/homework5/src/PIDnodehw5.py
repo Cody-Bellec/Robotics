@@ -13,7 +13,7 @@ class hw5_node:
         if rospy.has_param("/controller_ready"):
             rospy.set_param("/controller_ready", 'true')       
     
-        rospy.Subscriber("/controls_hw/error", Float32, self.callback)
+        rospy.Subscriber("/controls_hw/error", Float32, self.recall)
         self.pub = rospy.Publisher('/controls_hw/control_input', Float32, queue_size=10)
         
     def recall(self, value):
