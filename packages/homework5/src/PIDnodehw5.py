@@ -17,7 +17,7 @@ class hw5_node:
         self.pub = rospy.Publisher('/controls_hw/control_input', Float32, queue_size=10)
         
     def recall(self, value):
-        self.signal = remote.calculate(value.data)
+        self.signal = remote.calc(value.data)
         if value.data < 0.2:
             if value.data >- 0.2:
                 self.signal = 0
