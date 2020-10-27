@@ -24,7 +24,7 @@ class hw5_node:
         self.pub.publish(self.signal)
 
 if __name__ == '__main__':
-    rospy.init_node('hw5_node', anonymous=True)
+    rospy.init_node('PIDnodehw5', anonymous=True)
     hw5_node()
 
     # spin() simply keeps python from exiting until this node is stopped
