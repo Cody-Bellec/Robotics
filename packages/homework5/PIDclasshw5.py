@@ -11,7 +11,7 @@ class PID:
         self.KD = 0.4
         
         global t1
-        t1 = t.time()
+        t1 = time.time()
         global lastError
         lastError = firstError
         
@@ -21,7 +21,7 @@ class PID:
         self.KD = KDc
     
     def calc(self, error):
-        alphaT = t.time()-t1
+        alphaT = time.time()-t1
         
         self.signal = (self.KP*error) + (self.KI * alphaT) + (self.KD *((error-lastError)/alphaT))
         self.lastError = error
