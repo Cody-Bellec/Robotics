@@ -7,8 +7,8 @@ class PID:
     def __init__(self, firstError, firstvelocity):
         self.velocity = firstvelocity
         self.KP = 0.8
-        self.KI = 0.01
-        self.KD = 0.4
+        self.KI = 0.1
+        self.KD = 0.8
         
         global t1
         t1 = time.time()
