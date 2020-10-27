@@ -6,9 +6,9 @@ from std_msgs.msg import Float32
 class PID:
     def __init__(self, firstError, firstvelocity):
         self.velocity = firstvelocity
-        self.KP = 0.8
+        self.KP = 1.0
         self.KI = 0.1
-        self.KD = 0.8
+        self.KD = 1.0
         
         global t1
         t1 = time.time()
