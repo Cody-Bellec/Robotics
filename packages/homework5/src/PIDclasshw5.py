@@ -6,7 +6,7 @@ from std_msgs.msg import Float32
 class PID:
     def __init__(self, firstError, firstvelocity):
         self.velocity = firstvelocity
-        self.KP = 0.15
+        self.KP = 0.8
         self.KI = 0.01
         self.KD = 0.4
         
