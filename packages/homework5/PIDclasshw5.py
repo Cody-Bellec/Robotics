@@ -12,7 +12,7 @@ class PID:
         
         global t1
         t1 = t.time()
-        global laterError
+        global lastError
         lastError = firstError
         
     def changeGainz(self, KPc, KIc, KDc):
