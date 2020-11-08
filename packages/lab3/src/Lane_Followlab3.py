@@ -20,14 +20,14 @@ class lab3:
         #if rospy.has_param("/controller_ready"):
         #    rospy.set_param("/controller_ready", 'true')       
     
-        rospy.Subscriber("/MasonBot/lane_filter_node/lane_pose", LanePose, self.callback)
-        self.pub = rospy.Publisher('/MasonBot/car_cmd_switch_node/cmd', Twist2DStamped, queue_size=10)
+        rospy.Subscriber("/canard/lane_filter_node/lane_pose", LanePose, self.callback)
+        self.pub = rospy.Publisher('/canard/car_cmd_switch_node/cmd', Twist2DStamped, queue_size=10)
         
     
     
     def callback(self, position):
         
-        rospy.logwarn("Mason Pratte lane following program")
+        rospy.logwarn("Cody Bellec's lane following program")
 
         self.output = Twist2DStamped() 
         self.output.v = 0.25
@@ -54,6 +54,6 @@ class lab3:
            
     
 if __name__ == '__main__':
-    rospy.init_node('laneFollow', anonymous=True)
+    rospy.init_node('Lane_Followlab3', anonymous=True)
     lab3()
     rospy.spin()
