@@ -29,7 +29,7 @@ class lab3:
         rospy.logwarn("Cody Bellec's lane following program")
 
         self.output = Twist2DStamped() 
-        self.output.v = 0.25
+        self.output.v = 0.23
              
         self.angle = -controller1.calc(location.phi) 
         self.distance = -controller2.calc(location.d-0.07) 
@@ -38,11 +38,11 @@ class lab3:
         self.output.omega = self.angle + self.distance
         
          
-        if self.output.omega >8:
-            self.output.omega = 8
+        if self.output.omega >7:
+            self.output.omega = 7
 
-        if self.output.omega < -8:
-            self.output.omega = -8
+        if self.output.omega < -7:
+            self.output.omega = -7
 
 
         
