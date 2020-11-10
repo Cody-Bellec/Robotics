@@ -12,13 +12,12 @@ class lab3:
         global controller2
         
         controller1 = PID(0)
-        controller1.setGains(10,0,0)
+        controller1.changeGainz(10,0,0)
         
         controller2 = PID(0)
-        controller2.setGains(4,0,0)
+        controller2.changeGainz(4,0,0)
         
-        #if rospy.has_param("/controller_ready"):
-        #    rospy.set_param("/controller_ready", 'true')       
+        
     
         rospy.Subscriber("/canard/lane_filter_node/lane_pose", LanePose, self.callback)
         self.pub = rospy.Publisher('/canard/car_cmd_switch_node/cmd', Twist2DStamped, queue_size=10)
@@ -32,10 +31,10 @@ class lab3:
         self.output = Twist2DStamped() 
         self.output.v = 0.25
              
-        self.angle = -controller1.calc(position.phi) #phi +, angle -
-        self.distance = -controller2.calc(position.d-0.07) # d +, angle -
+        self.angle = -controller1.calc(position.phi) 
+        self.distance = -controller2.calc(position.d-0.07) 
         
-        #angle calculation based on distance to center and angle 
+        
         self.output.omega = self.angle + self.distance
         
          
@@ -46,7 +45,7 @@ class lab3:
             self.output.omega = -8
 
 
-        #angle calculation based on distance to center and angle 
+        
         self.output.omega = self.angle + self.distance
         
         self.pub.publish(self.output)
