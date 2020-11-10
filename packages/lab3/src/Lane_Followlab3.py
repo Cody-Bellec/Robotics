@@ -24,15 +24,15 @@ class lab3:
         
     
     
-    def callback(self, position):
+    def callback(self, location):
         
         rospy.logwarn("Cody Bellec's lane following program")
 
         self.output = Twist2DStamped() 
         self.output.v = 0.25
              
-        self.angle = -controller1.calc(position.phi) 
-        self.distance = -controller2.calc(position.d-0.07) 
+        self.angle = -controller1.calc(location.phi) 
+        self.distance = -controller2.calc(location.d-0.07) 
         
         
         self.output.omega = self.angle + self.distance
