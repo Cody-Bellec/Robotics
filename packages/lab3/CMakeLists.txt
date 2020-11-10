@@ -74,7 +74,7 @@ find_package(catkin REQUIRED COMPONENTS
    DEPENDENCIES
    duckietown_msgs
    std_msgs
-# )
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
