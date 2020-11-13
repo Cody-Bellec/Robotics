@@ -2,7 +2,7 @@
 
 import rospy
 from std_msgs.msg import Float32
-from PIDclass import PID
+from PIDclasslab3 import PID
 from duckietown_msgs.msg import Twist2DStamped, LanePose
 
 
