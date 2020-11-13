@@ -11,10 +11,10 @@ class lab3:
         global controller1
         global controller2
         
-        controller1 = PID(0)
+        controller1 = PID(0,0)
         controller1.changeGainz(10,0,0)
         
-        controller2 = PID(0)
+        controller2 = PID(0,0)
         controller2.changeGainz(4,0,0)
         
         
