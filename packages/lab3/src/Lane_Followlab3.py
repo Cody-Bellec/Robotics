@@ -12,10 +12,10 @@ class lab3:
         global controller2
         
         controller1 = PID(0,0)
-        controller1.changeGainz(10,0,0)
+        controller1.changeGainz(7,0,0)
         
         controller2 = PID(0,0)
-        controller2.changeGainz(4,0,0)
+        controller2.changeGainz(7,0,0)
         
         
     
@@ -29,7 +29,7 @@ class lab3:
         rospy.logwarn("Mason Pratte lane following program")
 
         self.output = Twist2DStamped() 
-        self.output.v = 0.23
+        self.output.v = 0.3
              
         self.angle = -controller1.calc(location.phi) 
         self.distance = -controller2.calc(location.d-0.07) 
