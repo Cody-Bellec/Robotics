@@ -26,7 +26,7 @@ class lab3:
     
     def callback(self, location):
         
-        rospy.logwarn("Cody Bellec's lane following program")
+        rospy.logwarn("Mason Pratte lane following program")
 
         self.output = Twist2DStamped() 
         self.output.v = 0.23
