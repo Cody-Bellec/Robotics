@@ -26,7 +26,7 @@ class lab3:
     
     def callback(self, location):
         
-        rospy.logwarn("Mason Pratte lane following program")
+        rospy.logwarn_throttle(60, "Mason Pratte lane following program")
 
         self.output = Twist2DStamped() 
         self.output.v = 0.24
