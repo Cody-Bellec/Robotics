@@ -29,7 +29,7 @@ class lab3:
         rospy.logwarn_throttle(60, "Mason Pratte lane following program")
 
         self.output = Twist2DStamped() 
-        self.output.v = 0.24
+        self.output.v = 0.18
              
         self.angle = -controller1.calc(location.phi) 
         self.distance = -controller2.calc(location.d) 
