@@ -3,7 +3,7 @@
 import rospy
 import math
 from std_msgs.msg import Float32
-from odometry_hw import DistWheel, Pose2D
+from odometry_hw.msg import DistWheel, Pose2D
 
 class HW7:
     def __init__(self):
