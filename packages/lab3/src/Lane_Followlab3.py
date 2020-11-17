@@ -29,7 +29,7 @@ class lab3:
         rospy.logwarn("Mason Pratte lane following program")
 
         self.output = Twist2DStamped() 
-        self.output.v = 0.3
+        self.output.v = 0.24
              
         self.angle = -controller1.calc(location.phi) 
         self.distance = -controller2.calc(location.d) 
