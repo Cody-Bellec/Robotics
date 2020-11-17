@@ -23,8 +23,8 @@ class HW7:
         
         Delta_s = (Delta_sL + Delta_sR)/2
         Delta_theta = (Delta_sR - Delta_sL)/(2*L)
-        Delta_x = Delta_s * cos(Pose.theta + (Delta_theta/2))
-        Delta_y = Delta_s * sin(Pose.theta + (Delta_theta/2))
+        Delta_x = Delta_s * math.cos(Pose.theta + (Delta_theta/2))
+        Delta_y = Delta_s * math.sin(Pose.theta + (Delta_theta/2))
         Pose.x = Pose.x + Delta_x
         Pose.y = Pose.y + Delta_y
         Pose.theta = Pose.theta + Delta_theta
