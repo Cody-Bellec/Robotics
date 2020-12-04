@@ -1,6 +1,6 @@
 <launch>
 
-  <group ns="homework7">
+  <group ns="homework8">
     <node pkg="homework8" name="homework8" type="homework8.py"/>
   </group>
   
