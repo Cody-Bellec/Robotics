@@ -45,6 +45,6 @@ class ImageProcess:
 
 if __name__=="__main__":
     # initialize our node and create a publisher as normal
-    rospy.init_node("hw8", anonymous=True)
+    rospy.init_node("homework8.py", anonymous=True)
     img_flip = ImageProcess()
     rospy.spin()
