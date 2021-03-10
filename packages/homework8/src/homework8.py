@@ -28,7 +28,7 @@ class ImageProcess:
        
         #
         cv2cropped = cv2.cvtColor(cropped, cv2.COLOR_BGR2HSV)
-        white_filtered = cv2.inRange(cv2cropped, (0,0,240),(180,255,255))
+        white_filtered = cv2.inRange(cv2cropped, (40,0,240),(180,255,255))
         wf = self.bridge.cv2_to_imgmsg(white_filtered, "mono8")
         self.pubwhite.publish(wf)
         #white filtering
