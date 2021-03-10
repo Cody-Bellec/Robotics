@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 
 import sys
 import rospy
@@ -13,9 +14,9 @@ class ImageProcess:
         self.pubcrop = rospy.Publisher("/image_cropped", Image, queue_size=10)
         self.pubwhite = rospy.Publisher("/image_white", Image, queue_size=10)
         self.pubyellow = rospy.Publisher("/image_yellow", Image, queue_size=10)
-       
+        
     def processing(self, msg):
-   
+    
         #cut off top half
         cv_img1 = self.bridge.imgmsg_to_cv2(msg, "bgr8")
         height = cv_img1.shape[0]
@@ -24,8 +25,8 @@ class ImageProcess:
         roscropped = self.bridge.cv2_to_imgmsg(cropped, "bgr8")
         self.pubcrop.publish(roscropped)
         #
-       
-       
+        
+        
         #
         cv2cropped = cv2.cvtColor(cropped, cv2.COLOR_BGR2HSV)
         white_filtered = cv2.inRange(cv2cropped, (40,0,240),(180,255,255))
@@ -33,8 +34,8 @@ class ImageProcess:
         self.pubwhite.publish(wf)
         #white filtering
         #
-       
-       
+        
+        
         #
         yellow_filtered = cv2.inRange(cv2cropped, (20, 100, 100),(180,255,255))
         yf = self.bridge.cv2_to_imgmsg(yellow_filtered, "mono8")
