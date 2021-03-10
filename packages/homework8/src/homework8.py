@@ -28,7 +28,7 @@ class ImageProcess:
        
         #
         cv2cropped = cv2.cvtColor(cropped, cv2.COLOR_BGR2HSV)
-        white_filtered = cv2.inRange(cv2cropped, (0,0,240),(180,255,255))
+        white_filtered = cv2.inRange(cv2cropped, (40,0,240),(180,255,255))
         wf = self.bridge.cv2_to_imgmsg(white_filtered, "mono8")
         self.pubwhite.publish(wf)
         #white filtering
@@ -44,6 +44,6 @@ class ImageProcess:
 
 if __name__=="__main__":
     # initialize our node and create a publisher as normal
-    rospy.init_node("homework8.py", anonymous=True)
+    rospy.init_node("homework8", anonymous=True)
     img_flip = ImageProcess()
     rospy.spin()
