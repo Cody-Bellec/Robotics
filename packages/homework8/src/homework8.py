@@ -18,7 +18,7 @@ class ImageProcess:
     def processing(self, msg):
     
         #cut off top half
-        cv_img1 = self.bridge.imgmsg_to_cv2(msg, "bgr8")
+        cv_image1 = self.bridge.imgmsg_to_cv2(msg, "bgr8")
         height = cv_image1.shape[0]
         width = cv_image1.shape[1]
         cropped = cv_image1[int(height/2):height, 0:width]
@@ -30,7 +30,7 @@ class ImageProcess:
         
         cv2cropped = cv2.cvtColor(cropped, cv2.COLOR_BGR2HSV)
         w_filter = cv2.inRange(cv2cropped, (40,0,240),(180,255,255))
-        wf = self.bridge.cv2_to_imagemsg(white_filter, "mono8")
+        wf = self.bridge.cv2_to_imgmsg(white_filter, "mono8")
         self.pubw.publish(wf)
         #w-filtering
         
@@ -38,7 +38,7 @@ class ImageProcess:
         
         
         y_filter = cv2.inRange(cv2cropped, (20, 100, 100),(180,255,255))
-        yf = self.bridge.cv2_to_imagemsg(yellow_filter, "mono8")
+        yf = self.bridge.cv2_to_imgmsg(yellow_filter, "mono8")
         self.puby.publish(yf)
         #y-filtering
         
