@@ -75,7 +75,7 @@ class ImageProcess:
         lines1 = cv2.HoughLinesP(cvim,rho = 1,theta = 1*np.pi/180,threshold = 1,minLineLength = 1,maxLineGap = 1)
         out = self.output_lines(orig, lines1)
         output = self.bridge.cv2_to_imgmsg(out, "bgr8")
-        self.pubwhite.publish(output)
+        self.pubw.publish(output)
         #output output
     
     def yellowlines(self, msg):
@@ -89,7 +89,7 @@ class ImageProcess:
         lines2 = cv2.HoughLinesP(cvim,rho = 1,theta = 1*np.pi/180,threshold = 1,minLineLength = 1,maxLineGap = 1)
         out = self.output_lines(orig, lines2)
         output = self.bridge.cv2_to_imgmsg(out, "bgr8")
-        self.pubyellow.publish(output)
+        self.puby.publish(output)
         #self.pubyellow.publish(output)
         #output output
         
