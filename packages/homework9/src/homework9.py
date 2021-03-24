@@ -16,15 +16,15 @@ class ImageProcess:
         
         # Instatiate the converter class once by using a class member
         self.bridge = CvBridge()
-        rospy.Subscriber("/image_cropped", Image, self.processlines)#subscribe to cropped images
+        rospy.Subscriber("/image_cropped", Image, self.processlines)		#subscribe to cropped images
         rospy.Subscriber("/image_white", Image, self.whitelines)
         rospy.Subscriber("/image_yellow", Image, self.yellowlines)
         
-        self.pubwhite = rospy.Publisher("/image_lines_white", Image, queue_size=10)
-        self.pubyellow = rospy.Publisher("/image_lines_yellow", Image, queue_size=10)
+        self.pubw = rospy.Publisher("/image_lines_white", Image, queue_size=10)
+        self.puby = rospy.Publisher("/image_lines_yellow", Image, queue_size=10)
         #self.pubcrop = rospy.Publisher("/image_cropped", Image, queue_size=10)
-        #self.pubwhite = rospy.Publisher("/image_white", Image, queue_size=10)
-        #self.pubyellow = rospy.Publisher("/image_yellow", Image, queue_size=10)
+        #self.pubw = rospy.Publisher("/image_white", Image, queue_size=10)
+        #self.puby = rospy.Publisher("/image_yellow", Image, queue_size=10)
         
     def output_lines(self, original_image, lines):
         output = np.copy(original_image)
