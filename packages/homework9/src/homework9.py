@@ -71,7 +71,7 @@ class ImageProcess:
         #img1 = cv2.Canny(cvimg1, 1, 10)
         
         #cvim = bitwise and cv_img1 with img1
-        cvim = cv2.bitwise_and(cv_img1, img1)
+        cvim = cv2.bitwise_and(cv_image1, img1)
         lines1 = cv2.HoughLinesP(cvim,rho = 1,theta = 1*np.pi/180,threshold = 1,minLineLength = 1,maxLineGap = 1)
         out = self.output_lines(orig, lines1)
         output = self.bridge.cv2_to_imgmsg(out, "bgr8")
